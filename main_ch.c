@@ -79,13 +79,13 @@ typedef struct
 typedef struct
 {
 	CommandHeader header;
-	uint8_t devInfo[6];
+	uint8_t devInfo[4];
 } __attribute__((packed)) DeviceInfo;
 
 typedef struct
 {
 	CommandHeader header;
-	uint8_t devFw[7];
+	uint8_t devFw[6];
 } __attribute__((packed)) DeviceFw;
 
 typedef struct
@@ -294,8 +294,8 @@ typedef struct chdev_t
 	uint8_t cmd_idx;
 } chdev_t;
 
-uint8_t ch_info[] = "CH-3.2";
-uint8_t ch_fw[] = "2.1.1.0";
+uint8_t ch_info[] = "CH32";
+uint8_t ch_fw[] = "0.1.11";
 uint8_t ch_serial[] = { 0, 0, 0, 0, 0, 0, 0, 0x2e };
 
 static void ch_write(struct chdev_t * chdev, uint8_t * buf, uint8_t len)
