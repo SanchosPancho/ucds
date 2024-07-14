@@ -525,6 +525,7 @@ static void ch_com_rx_process(struct chdev_t * chdev)
 						if (ch->open)
 							valid = 0;
 
+						led4_blink();
 						if (valid) {
 
 							if (config == FLAG_CONFIG_MODE) {
@@ -819,7 +820,7 @@ int main(void)
 			if (tick.flag_250ms) {
 
 				tick.flag_250ms = 0;
-				led4_blink();
+				//led4_blink();
 			}
 
 			if (tick.flag_1000ms) {
@@ -831,4 +832,3 @@ int main(void)
 
 	return 0;
 }
-
